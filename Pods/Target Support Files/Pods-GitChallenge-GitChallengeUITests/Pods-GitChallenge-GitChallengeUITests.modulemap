@@ -1,0 +1,6 @@
+framework module Pods_GitChallenge_GitChallengeUITests {
+  umbrella header "Pods-GitChallenge-GitChallengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
