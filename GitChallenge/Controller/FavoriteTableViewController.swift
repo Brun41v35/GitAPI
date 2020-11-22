@@ -7,10 +7,9 @@
 
 import UIKit
 
+var gitListFav: [ModelGit] = []
+
 class FavoriteTableViewController: UITableViewController {
-    
-    //MARK: - Variaveis
-    var gitListFav: [ModelGit] = []
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
@@ -23,10 +22,6 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     //MARK: - Metodos Table View
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return gitListFav.count
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gitListFav.count
     }
@@ -41,15 +36,11 @@ class FavoriteTableViewController: UITableViewController {
         return cell
     }
     
-    func addFav(_ gitModel: ModelGit) {
-        print("Estou sendo chamado")
-        gitListFav.append(gitModel)
-        tableView.reloadData()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let details = segue.destination as? DetailGitViewController {
-            details.tableViewController = self
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            gitListFav.remove(at: indexPath.row)
+            tableView.reloadData()
         }
     }
 }

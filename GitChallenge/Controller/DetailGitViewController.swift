@@ -19,20 +19,27 @@ class DetailGitViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     
     //MARK: - IBAction
-    @IBAction func viewProfile(_ sender: Any) {
+    @IBAction func addFavorite(_ sender: Any) {
         
+        gitListFav.append(gitModel)
+        
+        // MARK: Criando o Alert
+        let alerta = UIAlertController(title: "Successes", message: "User added with successes 🎊", preferredStyle: UIAlertController.Style.alert)
+        
+        // MARK: Adicionando acao
+        alerta.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        // MARK: Mostrando o Alert
+        self.present(alerta, animated: true, completion: nil)
     }
     
-    //MARK: - Metodos
-    @objc func addFav(){
+    @IBAction func viewProfile(_ sender: Any) {
         
     }
     
     //MARK: - Ciclo de vida VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
-        let botaoFav = UIBarButtonItem(title: "Favoritar", style: .done, target: self, action: #selector(addFav))
-        navigationItem.rightBarButtonItem = botaoFav
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,5 +54,11 @@ class DetailGitViewController: UIViewController {
         imageDetail.layer.cornerRadius = imageDetail.frame.size.height / 5.0
         imageDetail.layer.borderColor = UIColor.white.cgColor
         imageDetail.layer.borderWidth = 2
+    }
+    
+    //MARK: - Responsavel por passar informacoes entre telas.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let webUser = segue.destination as! WebUserViewController
+        webUser.gitModel = gitModel
     }
 }

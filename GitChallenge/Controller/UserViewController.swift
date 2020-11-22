@@ -46,9 +46,6 @@ class UserViewController: UIViewController {
             nomeUser = nome
             
             performSegue(withIdentifier: "segue", sender: nil)
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let balanceViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! GitTableViewController
-//            self.present(balanceViewController, animated: true, completion: nil)
         }
     }
     

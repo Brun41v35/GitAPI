@@ -16,11 +16,13 @@ struct Owner: Codable {
     var login: String
     var image: String
     var type: String
+    var htmlURL: String
     
     enum CodingKeys: String, CodingKey {
         case login
         case image = "avatar_url"
         case type
+        case htmlURL = "html_url"
     }
 }
 

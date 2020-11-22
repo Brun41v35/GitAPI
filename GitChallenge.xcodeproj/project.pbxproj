@@ -22,6 +22,7 @@
 		7E70E58C25633D1A00294076 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E70E58B25633D1A00294076 /* Usuario.swift */; };
 		7E70E591256340EC00294076 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E70E590256340EC00294076 /* UserViewController.swift */; };
 		7E7713F225615BBC006B62AA /* GitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7713F125615BBC006B62AA /* GitTableViewCell.swift */; };
+		7E8416552569633B00D2E836 /* WebUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8416542569633B00D2E836 /* WebUserViewController.swift */; };
 		7E882A3E2564C62C00437BF2 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E882A3D2564C62C00437BF2 /* FavoriteTableViewController.swift */; };
 		7E882A432564C6A500437BF2 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E882A422564C6A500437BF2 /* FavoriteTableViewCell.swift */; };
 		7EDF795B2561D60F0073B89C /* DetailGitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF795A2561D60F0073B89C /* DetailGitViewController.swift */; };
@@ -71,6 +72,7 @@
 		7E70E58B25633D1A00294076 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		7E70E590256340EC00294076 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		7E7713F125615BBC006B62AA /* GitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTableViewCell.swift; sourceTree = "<group>"; };
+		7E8416542569633B00D2E836 /* WebUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUserViewController.swift; sourceTree = "<group>"; };
 		7E882A3D2564C62C00437BF2 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		7E882A422564C6A500437BF2 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		7EDF795A2561D60F0073B89C /* DetailGitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGitViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				7EDF795A2561D60F0073B89C /* DetailGitViewController.swift */,
 				7E70E590256340EC00294076 /* UserViewController.swift */,
 				7E882A3D2564C62C00437BF2 /* FavoriteTableViewController.swift */,
+				7E8416542569633B00D2E836 /* WebUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				7E14CF812560BC8100165DEE /* ModelGit.swift in Sources */,
 				7E7713F225615BBC006B62AA /* GitTableViewCell.swift in Sources */,
 				7E882A3E2564C62C00437BF2 /* FavoriteTableViewController.swift in Sources */,
+				7E8416552569633B00D2E836 /* WebUserViewController.swift in Sources */,
 				7E14CF872560BEEC00165DEE /* REST.swift in Sources */,
 				7E5DBDC2255F6D50009DD0CF /* SceneDelegate.swift in Sources */,
 				7E59D75C2560F6280080EC30 /* GitTableViewController.swift in Sources */,
