@@ -25,6 +25,7 @@
 		7E8416552569633B00D2E836 /* WebUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8416542569633B00D2E836 /* WebUserViewController.swift */; };
 		7E882A3E2564C62C00437BF2 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E882A3D2564C62C00437BF2 /* FavoriteTableViewController.swift */; };
 		7E882A432564C6A500437BF2 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E882A422564C6A500437BF2 /* FavoriteTableViewCell.swift */; };
+		7E9B01F8256B108600673BF1 /* UserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B01F7256B108600673BF1 /* UserViewControllerTests.swift */; };
 		7EDF795B2561D60F0073B89C /* DetailGitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF795A2561D60F0073B89C /* DetailGitViewController.swift */; };
 		88C08A8148C9D813FB246B55 /* Pods_GitChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF1916828A4B33287F84DE6 /* Pods_GitChallengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		7E8416542569633B00D2E836 /* WebUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUserViewController.swift; sourceTree = "<group>"; };
 		7E882A3D2564C62C00437BF2 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		7E882A422564C6A500437BF2 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		7E9B01F7256B108600673BF1 /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
 		7EDF795A2561D60F0073B89C /* DetailGitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGitViewController.swift; sourceTree = "<group>"; };
 		ADD81189FA12BE7C30504AFB /* Pods_GitChallenge_GitChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitChallenge_GitChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECDC59802D702481054B107 /* Pods-GitChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitChallenge.debug.xcconfig"; path = "Target Support Files/Pods-GitChallenge/Pods-GitChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,9 +170,7 @@
 				7E14CF7F2560BC1A00165DEE /* Model */,
 				7E9F9E562560E26F00844B32 /* View */,
 				7E9F9E572560E28E00844B32 /* Controller */,
-				7E5DBDBF255F6D50009DD0CF /* AppDelegate.swift */,
-				7E5DBDC1255F6D50009DD0CF /* SceneDelegate.swift */,
-				7E5DBDC8255F6D53009DD0CF /* Assets.xcassets */,
+				7E9B01F6256B0F0700673BF1 /* Support */,
 				7E5DBDCD255F6D53009DD0CF /* Info.plist */,
 			);
 			path = GitChallenge;
@@ -180,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7E5DBDD6255F6D54009DD0CF /* GitChallengeTests.swift */,
+				7E9B01F7256B108600673BF1 /* UserViewControllerTests.swift */,
 				7E5DBDD8255F6D54009DD0CF /* Info.plist */,
 			);
 			path = GitChallengeTests;
@@ -192,6 +193,16 @@
 				7E5DBDE3255F6D54009DD0CF /* Info.plist */,
 			);
 			path = GitChallengeUITests;
+			sourceTree = "<group>";
+		};
+		7E9B01F6256B0F0700673BF1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7E5DBDBF255F6D50009DD0CF /* AppDelegate.swift */,
+				7E5DBDC1255F6D50009DD0CF /* SceneDelegate.swift */,
+				7E5DBDC8255F6D53009DD0CF /* Assets.xcassets */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		7E9F9E562560E26F00844B32 /* View */ = {
@@ -485,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5DBDD7255F6D54009DD0CF /* GitChallengeTests.swift in Sources */,
+				7E9B01F8256B108600673BF1 /* UserViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

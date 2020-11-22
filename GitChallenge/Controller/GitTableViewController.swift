@@ -11,13 +11,25 @@ class GitTableViewController: UITableViewController {
     
     //MARK: - Variaveis
     var informacoesGit: [ModelGit] = []    
-    var nomeUsuario: String?
+    var recebeNome: String?
+    var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = UIColor(named: "main")
+        return label
+    }()
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let user = Usuario(nome: nomeUsuario!)
+        
+        label.text = "Carregando Users.."
+        
+        guard let nomeUsuario = recebeNome else {
+            print("Nao recebi o nome..")
+            return
+        }
+        let user = Usuario(nome: nomeUsuario)
         self.navigationItem.title = "Hey, \(user.nome)"        
     }
     
@@ -45,11 +57,7 @@ class GitTableViewController: UITableViewController {
         }
     }
     
-    //MARK: - Metodos Table View
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return informacoesGit.count
-    }
-    
+    //MARK: - TableView DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return informacoesGit.count
     }

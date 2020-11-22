@@ -8,11 +8,15 @@
 import UIKit
 import Kingfisher
 
+protocol DetailViewControllerDelegate {
+    func addFavorito(_ gitFavorito: ModelGit)
+}
+
 class DetailGitViewController: UIViewController {
     
-    //MARK: - Variaveis
+    //MARK: - Variaveiss
     var gitModel: ModelGit!
-    var tableViewController = FavoriteTableViewController()
+    var delegate: DetailViewControllerDelegate?
     
     //MARK: - IBOutlets
     @IBOutlet weak var imageDetail: UIImageView!
@@ -21,8 +25,8 @@ class DetailGitViewController: UIViewController {
     //MARK: - IBAction
     @IBAction func addFavorite(_ sender: Any) {
         
-        gitListFav.append(gitModel)
-        
+        delegate?.addFavorito(gitModel)
+                
         // MARK: Criando o Alert
         let alerta = UIAlertController(title: "Successes", message: "User added with successes 🎊", preferredStyle: UIAlertController.Style.alert)
         
@@ -44,6 +48,7 @@ class DetailGitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        title = "Details"
         labelName.text = gitModel.owner.login
         if let url = URL(string: gitModel.owner.image) {
             imageDetail.kf.indicatorType = .activity

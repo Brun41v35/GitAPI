@@ -51,6 +51,6 @@ class UserViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! GitTableViewController
-        vc.nomeUsuario = nomeUser
+        vc.recebeNome = nomeUser
     }
 }

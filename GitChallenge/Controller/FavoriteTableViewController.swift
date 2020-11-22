@@ -7,9 +7,11 @@
 
 import UIKit
 
-var gitListFav: [ModelGit] = []
 
-class FavoriteTableViewController: UITableViewController {
+class FavoriteTableViewController: UITableViewController, DetailViewControllerDelegate {
+    
+    //MARK: - Variaveis
+    var gitListFav: [ModelGit] = []
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
@@ -41,6 +43,17 @@ class FavoriteTableViewController: UITableViewController {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             gitListFav.remove(at: indexPath.row)
             tableView.reloadData()
+        }
+    }
+    
+    func addFavorito(_ gitFavorito: ModelGit) {
+        gitListFav.append(gitFavorito)
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detail = segue.destination as? DetailGitViewController {
+            detail.delegate = self
         }
     }
 }

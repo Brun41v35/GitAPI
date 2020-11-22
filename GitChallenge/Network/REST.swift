@@ -21,6 +21,7 @@ class REST {
     //MARK: - Atributos
     private static let baseURL = "https://api.github.com/gists/public"
     
+    //MARK: - Responsavel por carregar as informacoes API
     class func carregaInfo(onComplete: @escaping ([ModelGit]) -> Void, onError: @escaping (GitError) -> Void) {
         
         guard let url = URL(string: baseURL) else {
@@ -43,15 +44,12 @@ class REST {
                         onComplete(gitInfo)
                     } catch {
                         onError(.jsonInvalido)
-                        print(erro?.localizedDescription)
                     }
                 } else {
                     onError(.statusCodeErro(code: response.statusCode))
-                    print("Eita")
                 }
             } else {
                 onError(.tarefaErro(erro: erro!))
-                print("Aconteceu algum erro..")
             }
         }
         tarefa.resume()
