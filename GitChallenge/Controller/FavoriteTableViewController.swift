@@ -47,6 +47,7 @@ class FavoriteTableViewController: UITableViewController, DetailViewControllerDe
     }
     
     func addFavorito(_ gitFavorito: ModelGit) {
+        print("Estou sendo chamado!")
         gitListFav.append(gitFavorito)
         tableView.reloadData()
     }

@@ -15,8 +15,6 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var labelNameGit: UILabel!
     @IBOutlet weak var imageGit: UIImageView!
     
-    //MARK: - Atributos
-    
     //MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
