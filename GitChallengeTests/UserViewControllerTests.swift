@@ -18,5 +18,7 @@ class UserViewControllerTests: XCTestCase {
     
     func testValidaSeCampoTemValor() {
         
+        let usuario = Usuario(nome: "Bruno")
+        XCTAssertEqual("Bruno", usuario.nome)
     }
 }

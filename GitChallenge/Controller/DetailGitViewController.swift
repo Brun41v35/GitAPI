@@ -25,6 +25,7 @@ class DetailGitViewController: UIViewController {
     //MARK: - IBAction
     @IBAction func addFavorite(_ sender: Any) {
         
+        gitListFav.append(gitModel)
         delegate?.addFavorito(gitModel)
                 
         // MARK: Criando o Alert

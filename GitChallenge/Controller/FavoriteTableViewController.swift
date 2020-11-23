@@ -7,11 +7,9 @@
 
 import UIKit
 
+var gitListFav: [ModelGit] = []
 
 class FavoriteTableViewController: UITableViewController, DetailViewControllerDelegate {
-    
-    //MARK: - Variaveis
-    var gitListFav: [ModelGit] = []
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
