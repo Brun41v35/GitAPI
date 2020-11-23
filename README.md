@@ -11,3 +11,15 @@ Olá pessoal, neste repositorio acabei desenvolvendo uma aplicação que consome
 
 ## Imagens do Projeto 💕
 
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/43152275/99920483-8afdb780-2d02-11eb-9183-81dfcc0a799f.png" width="200" />
+  <img src="https://user-images.githubusercontent.com/43152275/99920548-17a87580-2d03-11eb-806b-c76114e47660.png" width="200" /> 
+  <img src="https://user-images.githubusercontent.com/43152275/99920550-1aa36600-2d03-11eb-962d-8c39d3e2366b.png" width="200" />
+</p>
+
+## Melhorias
+Esse projeto ainda falta muitas coisas.. Vou melhorar a cada dia. 😉
+
+
+
+
