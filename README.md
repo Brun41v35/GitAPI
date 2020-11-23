@@ -7,6 +7,8 @@ Olá pessoal, neste repositorio acabei desenvolvendo uma aplicação que consome
 * Gerenciador de Dependencias: Cocoapods 
 * Bibliotecas: Kingfisher (biblioteca responsavel pelas imagens da API)
 * Arquitetura: MVC
+* WKWebView 🌎
+* SF Symbols
 
 ## Imagens do Projeto 💕
 
