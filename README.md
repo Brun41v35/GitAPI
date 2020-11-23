@@ -1,6 +1,6 @@
 # GitAPI 👾
 
-Olá pessoal, nessa branch tem a tela de favoritos ⭐️
+Olá pessoal, nessa branch contém a tela de favoritos ⭐️
 
 ## Arquitetura do Projeto 💻
 * Linguagem: Swift 🥰
