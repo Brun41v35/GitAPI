@@ -8,10 +8,10 @@
 import XCTest
 
 class RestTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
     }
-
+    
     override func tearDownWithError() throws {
     }
     
@@ -27,11 +27,12 @@ class RestTests: XCTestCase {
                 
                 XCTAssertNil(error, "Opa, deu certo! Nenhum erro")
                 
-                guard let response = requisicao as? HTTPURLResponse else { return }
-                
+                guard let response = requisicao as? HTTPURLResponse else {
+                    print("Não consegui receber as informacoes!")
+                    return
+                }
                 XCTAssertEqual(response.statusCode, 200)
             }
         }
     }
-
 }

@@ -26,7 +26,7 @@ class DetailGitViewController: UIViewController {
     @IBAction func addFavorite(_ sender: Any) {
         
         delegate?.addFavorito(gitModel)
-                
+
         // MARK: Criando o Alert
         let alerta = UIAlertController(title: "Successes", message: "User added with successes 🎊", preferredStyle: UIAlertController.Style.alert)
         
