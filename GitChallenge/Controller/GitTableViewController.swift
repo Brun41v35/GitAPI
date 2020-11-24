@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GitTableViewController: UITableViewController {
+class GitTableViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: - Variaveis
     var informacoesGit: [ModelGit] = []    
@@ -18,6 +18,10 @@ class GitTableViewController: UITableViewController {
         label.textColor = UIColor(named: "main")
         return label
     }()
+    var filterList: [ModelGit]!
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
@@ -37,37 +41,50 @@ class GitTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         
-        REST.carregaInfo { (informacoesGit) in
+        REST.carregaInfo { (informacoes) in
             
-            self.informacoesGit = informacoesGit
+            self.informacoesGit = informacoes
             DispatchQueue.main.async {
+                self.searchBar.delegate = self
+                self.filterList = self.informacoesGit
                 self.tableView.reloadData()
             }
-            
         } onError: { (error) in
             print(error)
         }
+        filterList = informacoesGit
     }
     
     //MARK: - Prepare: Passando as informacoes para outra Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDetails" {
             let vc = segue.destination as! DetailGitViewController
-            vc.gitModel = informacoesGit[tableView.indexPathForSelectedRow!.row]
+            vc.gitModel = filterList[tableView.indexPathForSelectedRow!.row]
         }
     }
     
     //MARK: - TableView DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return informacoesGit.count
+        return filterList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GitTableViewCell
         
-        let git = informacoesGit[indexPath.row]
+        let git = filterList[indexPath.row]
         cell.prepareCell(with: git)
         
         return cell
+    }
+    
+    //MARK: - Search Bar function
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty{
+            filterList = informacoesGit
+        } else {
+            filterList = informacoesGit.filter { $0.owner.login.lowercased().contains(searchText.lowercased()) }
+        }
+        self.tableView.reloadData()
     }
 }

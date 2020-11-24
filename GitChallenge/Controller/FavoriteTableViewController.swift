@@ -9,7 +9,13 @@ import UIKit
 
 var gitListFav: [ModelGit] = []
 
-class FavoriteTableViewController: UITableViewController, DetailViewControllerDelegate {
+class FavoriteTableViewController: UITableViewController, UISearchBarDelegate, DetailViewControllerDelegate {
+    
+    //MARK: - Variaveis
+    var filterList: [ModelGit]!
+    
+    //MARK: - IBOutlet
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: - Ciclo de vida View
     override func viewDidLoad() {
@@ -18,19 +24,20 @@ class FavoriteTableViewController: UITableViewController, DetailViewControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        searchBar.delegate = self
+        filterList = gitListFav
     }
     
     //MARK: - Metodos Table View
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gitListFav.count
+        return filterList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavoriteTableViewCell
         
-        let git = gitListFav[indexPath.row]
+        let git = filterList[indexPath.row]
         cell.testeCell(with: git)
         
         return cell
@@ -39,7 +46,7 @@ class FavoriteTableViewController: UITableViewController, DetailViewControllerDe
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            gitListFav.remove(at: indexPath.row)
+            filterList.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -53,5 +60,16 @@ class FavoriteTableViewController: UITableViewController, DetailViewControllerDe
         if let detail = segue.destination as? DetailGitViewController {
             detail.delegate = self
         }
+    }
+    
+    //MARK: - Search Bar function
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty{
+            filterList = gitListFav
+        } else {
+            filterList = gitListFav.filter { $0.owner.login.lowercased().contains(searchText.lowercased()) }
+        }
+        self.tableView.reloadData()
     }
 }
