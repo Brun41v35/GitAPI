@@ -11,6 +11,7 @@ class UserViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var tfNameUser: UITextField!
+    @IBOutlet weak var getUsers: UIButton!
     
     //MARK: - Variaveis
     var nomeUser = ""
@@ -29,22 +30,18 @@ class UserViewController: UIViewController {
     @IBAction func salvarNome(_ sender: Any) {
         
         guard let nome = tfNameUser.text else { return }
+        validaCampoPreenchido(nome)
+    }
+    
+    //MARK: - Metodos
+    func validaCampoPreenchido(_ nome: String) {
         
-        if nome.isEmpty == true {
-            
-            // MARK: Criando o Alert
+        if nome.isEmpty {
             let alerta = UIAlertController(title: "Calm down", message: "I need to know your name 😔", preferredStyle: UIAlertController.Style.alert)
-            
-            // MARK: Adicionando acao
             alerta.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            
-            // MARK: Mostrando o Alert
             self.present(alerta, animated: true, completion: nil)
-            
         } else {
-            
             nomeUser = nome
-            
             performSegue(withIdentifier: "segue", sender: nil)
         }
     }

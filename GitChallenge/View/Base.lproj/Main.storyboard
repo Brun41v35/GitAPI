@@ -184,7 +184,7 @@
         <!--Hello User-->
         <scene sceneID="TvI-wJ-oQX">
             <objects>
-                <viewController id="83j-NE-TVS" customClass="UserViewController" customModule="GitChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userView" id="83j-NE-TVS" customClass="UserViewController" customModule="GitChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gh2-fg-r0C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <connections>
                                                     <action selector="tfNameUser:" destination="AgL-pR-lJ4" eventType="editingDidEnd" id="91q-I2-lb3"/>
                                                 </connections>
@@ -278,6 +278,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="SAt-Dh-a6S"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="getUsers" destination="nlm-Es-wV2" id="hPG-dL-t39"/>
                         <outlet property="tfNameUser" destination="A5J-GY-aah" id="ahj-v1-zoy"/>
                         <segue destination="ck8-bx-0PG" kind="show" identifier="segue" id="cFx-gO-3mw"/>
                     </connections>
